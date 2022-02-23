@@ -1,6 +1,10 @@
 import 'package:get/get.dart';
 
 class Controller extends GetxController {
-  var count = 0.obs;
-  RxInt increment() => count++;
+  RxInt count = 0.obs;
+  increment() => count++;
+
+  var isDark = false.obs;
+
+  changeTheme() => isDark.value = !isDark.value;
 }
