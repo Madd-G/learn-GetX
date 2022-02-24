@@ -1,9 +1,11 @@
 import 'package:counter_app/controllers/controller.dart';
+import 'package:counter_app/controllers/second_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() {
-  final Controller c = Get.put(Controller());
+  final Controller c = Get.put<Controller>(Controller());
+
   runApp(Obx(() => GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: c.isDark.value ? ThemeData.dark() : ThemeData.light(),
@@ -22,7 +24,7 @@ class Home extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          ElevatedButton(
+           ElevatedButton(
               onPressed: () => c.changeTheme(),
               child: const Text("Change Theme")),
           Expanded(
@@ -48,6 +50,7 @@ class Home extends StatelessWidget {
 }
 
 class SecondPage extends StatelessWidget {
+  final SecondController s = Get.put(SecondController());
   final Controller c = Get.find();
 
   SecondPage({Key? key}) : super(key: key);
@@ -69,7 +72,7 @@ class SecondPage extends StatelessWidget {
             )),
       ),
       floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.add), onPressed: () => c.increment()),
+          child: const Icon(Icons.remove), onPressed: () => s.decrement()),
     );
   }
 }
