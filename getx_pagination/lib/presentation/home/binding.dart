@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:getx_pagination/presentation/view/controller.dart';
+import 'package:getx_pagination/presentation/home/controller.dart';
 
 class HomeBinding extends Bindings {
   @override
