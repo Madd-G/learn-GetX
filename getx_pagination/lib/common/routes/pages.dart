@@ -10,7 +10,7 @@ class AppPages {
     if (settings.name == initial) {
       return GetPageRoute(
         settings: settings,
-        page: () => HomePage(),
+        page: () => const HomePage(),
         binding: HomeBinding(),
       );
     }
